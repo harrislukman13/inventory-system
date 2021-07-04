@@ -1,0 +1,19 @@
+
+
+CREATE TABLE INVENTORY(
+item_id integer not null AUTO_INCREMENT PRIMARY KEY,
+item_name varchar(128),
+quantity integer,
+price float(10,2),
+company_id integer,
+    CONSTRAINT FOREIGN KEY (company_id) REFERENCES company (company_id)
+    ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table company(
+    company_Id integer not null AUTO_INCREMENT PRIMARY KEY,
+    company_name varcahr(128),
+    address varchar(255),
+    tel_num Integer,
+    email varchar(128)
+    );
